@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <todo-list v-bind:todos="todos"></todo-list>
+    <create-todo v-on:create-todo="createTodo"></create-todo>
   </div>
 </template>
 
 <script>
+import sweetalert from 'sweetalert'
 import TodoList from './components/TodoList'
+import CreateTodo from './components/CreateTodo'
 
 export default {
   name: 'app',
   components: {
     TodoList,
+    CreateTodo
   },
   data() {
     return {
@@ -33,6 +37,12 @@ export default {
       }],
     }
   },
+  methods: {
+    createTodo(newTodo) {
+      this.todos.push(newTodo)
+      sweetalert('Success!', 'To-Do created!', 'success')
+    }
+  }
 }
 </script>
 

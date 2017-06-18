@@ -2,7 +2,7 @@
   <div>
     <p class="tasks">完了したタスク: {{ todos.filter(todo => { return todo.done === true }).length }}</p>
     <p class="tasks">未完了のタスク: {{ todos.filter(todo => { return todo.done === false }).length}}</p>
-    <todo v-on:delete-todo="deleteTodo" v-for="todo in todos" v-bind:todo="todo"></todo>
+    <todo v-on:delete-todo="deleteTodo" v-on:complete-todo="completeTodo" v-for="todo in todos" v-bind:todo="todo"></todo>
   </div>
 </template>
 
@@ -31,6 +31,11 @@ export default {
         this.todos.splice(todoIndex, 1);
         sweetalert('Deleted!', 'Your To-Do has been deleted.', 'success');
       });
+    },
+    completeTodo(todo) {
+      const todoIndex = this.todos.indexOf(todo)
+      this.todos[todoIndex].done = true
+      sweetalert('Success!', 'To-Do completed!', 'success')
     }
   }
 }

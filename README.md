@@ -4,6 +4,8 @@
 
 https://vue-todo-app.herokuapp.com/
 
+[![https://gyazo.com/25e210a951f27839af6eb4b9dd816bcd](https://i.gyazo.com/25e210a951f27839af6eb4b9dd816bcd.gif)](https://gyazo.com/25e210a951f27839af6eb4b9dd816bcd)
+
 ## Build Setup
 
 ``` bash
